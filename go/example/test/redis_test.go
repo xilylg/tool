@@ -13,7 +13,25 @@ func TestGetBigKey(t *testing.T) {
 
 func BenchmarkGetBigKey(b *testing.B) {
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for i := 0; i < 51; i++ {
 		example.GetBigKey()
 	}
+}
+
+func BenchmarkGetBaidu2(b *testing.B) {
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		example.GetBaidu()
+	}
+}
+
+func BenchmarkGetBaiduFastHttp(b *testing.B) {
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		example.GetBaiduFastHttp()
+	}
+}
+
+func TestLogs(t *testing.T) {
+	example.Logs()
 }
